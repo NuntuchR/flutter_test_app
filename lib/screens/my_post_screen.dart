@@ -24,7 +24,6 @@ class _MyPostScreenState extends State<MyPostScreen> {
   PostModel _post = PostModel();
   TextEditingController _textEditingController = TextEditingController();
   bool _isProgressing = false;
-  PickImage _pickImage = PickImage();
 
   @override
   void dispose() {
@@ -51,7 +50,7 @@ class _MyPostScreenState extends State<MyPostScreen> {
                 ),
                 onPressed: () {
                   _isPost
-                      ? ShowPopup.showActionDialog(context, 'Discard Post?')
+                      ? showActionDialog(context, 'Discard Post?')
                       : Navigator.pop(context);
                 }),
             title: Center(
@@ -102,7 +101,7 @@ class _MyPostScreenState extends State<MyPostScreen> {
                                 Navigator.pop(context);
                               }, onError: ((error, stackTrace) {
                                 //if error show error message
-                                ShowPopup.showErrorDialog(
+                                showErrorDialog(
                                     context, error.toString());
                               }));
                               //clear text field
@@ -134,7 +133,7 @@ class _MyPostScreenState extends State<MyPostScreen> {
                                 : kMediumTextGreyStyle,
                           ),
                           onPressed: () async {
-                            await _pickImage.getPhoto(
+                            await getPhoto(
                                 _post, ImageSource.gallery);
                             setState(() {
                               //show selected photos
@@ -156,7 +155,7 @@ class _MyPostScreenState extends State<MyPostScreen> {
                                 : kMediumTextGreyStyle,
                           ),
                           onPressed: () async {
-                            await _pickImage.getPhoto(
+                            await getPhoto(
                                 _post, ImageSource.camera);
                             setState(() {
                               //show selected photos
