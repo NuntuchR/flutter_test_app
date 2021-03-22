@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test_app/screens/my_feed_screen.dart';
 
-class ShowPopup {
 
   ///Show dialog to confirm user action
   ///
   ///
-  static Future<void> showActionDialog(
+  Future<void> showActionDialog(
       BuildContext context, String content) async {
     return showDialog<void>(
       context: context,
@@ -41,7 +40,7 @@ class ShowPopup {
   ///Show error dialog
   ///
   ///
-  static Future<void> showErrorDialog(BuildContext context, String content) {
+  Future<void> showErrorDialog(BuildContext context, String content) {
     return showDialog<void>(
       context: context,
       barrierDismissible: true,
@@ -64,7 +63,7 @@ class ShowPopup {
   ///Show only selected [photo] on screen
   ///
   ///
-  static Future<void> showFullPhoto(BuildContext context, Widget photo) {
+  Future<void> showFullPhoto(BuildContext context, Widget photo) {
     return showDialog<void>(
       context: context,
       barrierDismissible: true,
@@ -77,4 +76,3 @@ class ShowPopup {
       },
     );
   }
-}

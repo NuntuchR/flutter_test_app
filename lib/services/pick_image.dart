@@ -5,7 +5,6 @@ import 'package:image_picker/image_picker.dart';
 
 import '../constant.dart';
 
-class PickImage {
   final picker = ImagePicker();
 
   ///Get image form the selected [source]
@@ -22,4 +21,3 @@ class PickImage {
       }
     }
   }
-}
