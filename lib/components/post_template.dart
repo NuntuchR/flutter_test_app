@@ -63,7 +63,7 @@ class PostTemplate extends StatelessWidget {
                                 _post['id'],
                                 _post['photos'],
                               ).onError((error, stackTrace) =>
-                                  ShowPopup.showErrorDialog(
+                                  showErrorDialog(
                                       context, error.toString()));
                             }),
                       ),
@@ -113,7 +113,7 @@ class PostTemplate extends StatelessWidget {
     for (var photo in photos) {
       fullPhoto.add(GestureDetector(
         onTap: () {
-          ShowPopup.showFullPhoto(context, photo);
+          showFullPhoto(context, photo);
         },
         child: photo,
       ));

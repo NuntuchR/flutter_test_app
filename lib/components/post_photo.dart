@@ -13,7 +13,7 @@ class PostPhoto extends StatelessWidget {
     return Stack(children: [
       GestureDetector(
         onTap:(){
-          ShowPopup.showFullPhoto(context, Image.file(
+          showFullPhoto(context, Image.file(
             photo,
           ),);
         },
